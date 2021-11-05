@@ -14,14 +14,6 @@ var specChars = ["!", "#", "$", "%", "&", "*", "[", "]", "{", "}", "@", "~", "="
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
-
-
-  passwordText.value = password;
-
-}
-
-
 function generatePassword() {
 // prompt for length 
     var passwordLength = prompt("How long would you like your password to be? \nBetween 8 and 128 characters.");
@@ -61,34 +53,31 @@ function generatePassword() {
             if ( typeChoices.specCharsConfirm){
               emptyArray = emptyArray.concat(specChars)
             }
-            console.log(typeChoices)
+            // emptyArray.join('');
+            var newPass = ""
+            for (i = 0; i < passwordLength; i++) {
+              newPass += emptyArray[Math.floor(Math.random() * emptyArray.length)];
+            };
+
+
+            console.log(newPass)
             console.log(emptyArray)
+            alert("Your new password is: \n" + newPass)
+              // passwordText.value = newPass;
            
-          }
+          } 
           passwordRandom()
         }
       }
       characterTypes();
     }
 
-
-
-    // Math.floor(Math.random() * passwordLength.length)
-    
-
   }
 
 
-  //  var arrayChoices = [].concat(lowerCase, upperCase, numbers, specChars)
 
 
-  // alert(length + lowerCase + upperCase + numbers + specChars)
-
-
-// create password data sets
-// randomize selection
-// output to page
-
+}
 
 
 
