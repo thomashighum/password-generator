@@ -50,16 +50,16 @@ function generatePassword() {
           //  var arrayChoices = [].concat(lowerCase, upperCase, numbers, specChars)
           function passwordRandom() { // generate the password to length and using types
             if ( typeChoices.lowerCaseConfirm){
-              emptyArray = [].concat(lowerCase)
+              emptyArray.concat(lowerCase)
             }
             if (typeChoices.upperCaseConfirm) {
-              emptyArray = [].concat(upperCase)
+              emptyArray.concat(upperCase)
             }  
             if ( typeChoices.numbersConfirm){
-              emptyArray = [].concat(numbers)
+              emptyArray.concat(numbers)
             }
             if ( typeChoices.specCharsConfirm){
-              emptyArray = [].concat(specChars)
+              emptyArray.concat(specChars)
             }
             console.log(typeChoices)
             console.log(emptyArray)
