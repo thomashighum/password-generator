@@ -2,10 +2,13 @@
 var generateBtn = document.querySelector("#generate");
 
 // Data sets
+var emptyArray = []
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ]
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ]
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 var specChars = ["!", "#", "$", "%", "&", "*", "[", "]", "{", "}", "@", "~", "=", "+", "-", "_", "(", ")", "^", ".", "/", "|", ";", ":"]
+
+
 
 // Write password to the #password input
 function writePassword() {
@@ -44,11 +47,28 @@ function generatePassword() {
           alert("You will need to select at least one character type.")
           characterTypes()
         } else {
+          //  var arrayChoices = [].concat(lowerCase, upperCase, numbers, specChars)
           function passwordRandom() { // generate the password to length and using types
-              var arrayChoices = [].concat()
+            if ( typeChoices.lowerCaseConfirm){
+              emptyArray = [].concat(lowerCase)
+            }
+            if (typeChoices.upperCaseConfirm) {
+              emptyArray = [].concat(upperCase)
+            }  
+            if ( typeChoices.numbersConfirm){
+              emptyArray = [].concat(numbers)
+            }
+            if ( typeChoices.specCharsConfirm){
+              emptyArray = [].concat(specChars)
+            }
+            console.log(typeChoices)
+            console.log(emptyArray)
+           
           }
+          passwordRandom()
         }
       }
+      characterTypes();
     }
 
 
@@ -59,7 +79,7 @@ function generatePassword() {
   }
 
 
-  
+  //  var arrayChoices = [].concat(lowerCase, upperCase, numbers, specChars)
 
 
   // alert(length + lowerCase + upperCase + numbers + specChars)
